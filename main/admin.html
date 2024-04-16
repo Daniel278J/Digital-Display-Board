@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 17%;
+  background-color: #3498DB ;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: #ffffff ;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #3498DB ;
+  color: white;
+}
+.active{
+  margin-left: 25px;
+}
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+a.active:hover{
+  background-color: #555;
+  color: white;
+}
+div.content {
+  width: 83%;
+  margin-left: 17%;
+  /* border-style: double; */
+  height: 99%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a onclick="openi()">Insert</a>
+  <div id="insert" style="display: none;">
+    <a class="active" href="../insert/achievement.php" target="fra1">Achievements</a>
+    <a class="active" href="../insert/event.php" target="fra1">Events</a>
+  </div>
+  <a onclick="closei()" href="../pandp/publish.php" target="fra1">Retrive</a>
+  <a href="index.php">LOGOUT</a>
+</div>
+
+<div class="content">
+  <iframe height="100%" width="100%" float="right" frameborder="0" name="fra1" src="a.html">
+  </iframe>
+</div>
+<script>
+  function openi() {
+    if (document.getElementById("insert").style.display == "none") {
+        document.getElementById("insert").style.display = "block";
+    } else {
+        document.getElementById("insert").style.display = "none";
+    }
+  }
+  function closei(){
+    document.getElementById("insert").style.display = "none";
+  }
+</script>
+</body>
+</html>
